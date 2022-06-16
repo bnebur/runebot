@@ -1,2 +1,9 @@
 # runebot
-Node runescape farming bot.
+Bot de Old School Runescape usando Node.js
+
+
+## Instalacion
+
+
+## Usos
+
