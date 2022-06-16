@@ -1,0 +1,25 @@
+{
+  "name": "runebot",
+  "version": "1.0.0",
+  "description": "OSRS Bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bnebur/runebot.git"
+  },
+  "keywords": [
+    "runescape"
+  ],
+  "author": "bnebur, freiseb, mskdmage",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bnebur/runebot/issues"
+  },
+  "homepage": "https://github.com/bnebur/runebot#readme",
+  "dependencies": {
+    "robotjs": "^0.6.0"
+  }
+}
