@@ -7,6 +7,11 @@ class Bot {
 		this.robot.moveMouseSmooth(x, y);
 		this.robot.mouseClick();
 	}
+
+	revisarMouse() {
+		let posMouse = this.robot.getMousePos();
+		console.log(posMouse);
+	}
 }
 
 module.exports = {
