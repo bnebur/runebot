@@ -4,4 +4,4 @@ const Bot = bot.Bot;
 
 let miBot = new Bot(robot);
 
-miBot.revisarMouse();
+miBot.rectificar();

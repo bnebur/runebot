@@ -12,6 +12,12 @@ class Bot {
 		let posMouse = this.robot.getMousePos();
 		console.log(posMouse);
 	}
+
+	rectificar() {
+		const coord = {x: 1764, y: 107};
+		this.robot.moveMouseSmooth(coord.x, coord.y);
+		this.robot.mouseClick();
+	}
 }
 
 module.exports = {
