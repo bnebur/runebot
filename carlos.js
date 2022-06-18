@@ -4,4 +4,10 @@ const Bot = bot.Bot;
 
 let miBot = new Bot(robot);
 
-miBot.rectificar();
+const coord1 = {x: 1900, y: 143};
+const coord2 = {x: 1909, y: 163};
+
+
+miBot.caminar(coord2);
+
+//miBot.revisarMouse();

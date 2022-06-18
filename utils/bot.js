@@ -3,9 +3,12 @@ class Bot {
 		this.robot = robot;
 	}
 
-	caminar(x, y) {
+	caminar(coords) {
+		let x = coords.x;
+		let y = coords.y;
 		this.robot.moveMouseSmooth(x, y);
 		this.robot.mouseClick();
+		this.dormir(14);
 	}
 
 	revisarMouse() {
@@ -17,6 +20,11 @@ class Bot {
 		const coord = {x: 1764, y: 107};
 		this.robot.moveMouseSmooth(coord.x, coord.y);
 		this.robot.mouseClick();
+	}
+
+	dormir(s) {
+		let ms = s * 1000;
+		Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, ms);
 	}
 }
 
