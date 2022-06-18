@@ -3,5 +3,3 @@ const bot = require('./utils/bot.js')
 const Bot = bot.Bot;
 
 let miBot = new Bot(robot);
-
-miBot.caminar(10, 20);
