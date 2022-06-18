@@ -1,15 +1,7 @@
 const robot = require('robotjs');
+const bot = require('./utils/bot.js')
+const Bot = bot.Bot;
 
+let miBot = new Bot(robot);
 
-console.log("Hola mundo");
-
-
-
-function main() {
-	robot.moveMouseSmooth(0, 0);
-	robot.mouseClick();
-}
-
-console.log("Adios");
-
-main();
+miBot.caminar(10, 20);
