@@ -4,5 +4,13 @@ const rutas = require('./utils/rutas.js');
 const Bot = bot.Bot;
 
 let miBot = new Bot(robot);
+miBot.rectificar();
+ 
+//miBot.viajar(rutas.deMinaABanco);
+//miBot.viajar(rutas.deBancoAMina);
+//miBot.revisarMouse();
 
-miBot.viajar(rutas.deLumbridgeAVarrock);
+
+
+
+//miBot.viajar(rutas.deLumbridgeAVarrock);
