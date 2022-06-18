@@ -22,6 +22,13 @@ class Bot {
 		this.robot.mouseClick();
 	}
 
+	viajar(listaDeCoord) {
+		this.rectificar();
+		for (let coord of listaDeCoord) {
+			this.caminar(coord);
+		}
+	}
+
 	dormir(s) {
 		let ms = s * 1000;
 		Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, ms);
