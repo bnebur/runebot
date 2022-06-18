@@ -5,4 +5,6 @@ const Bot = bot.Bot;
 
 let miBot = new Bot(robot);
 
-miBot.viajar(rutas.deLumbridgeAVarrock);
+miBot.revisarMouse();
+
+let c1 = {x:1900, y:140};
