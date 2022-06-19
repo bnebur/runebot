@@ -4,9 +4,11 @@ const deBancoAMina = [{x:1903 , y:138}, {x:1885 , y:217}, {x:1879 , y:220}, {x:1
 
 const deMinaABanco = [{x:1866 , y:102}, {x:1825 , y:96}, {x:1808 , y:100}, {x:1772 , y:135}, {x:1780 , y:196}, {x:1834 , y:169}];
 
+const deVarrockABarbados = [{x:1769, y:162}, {x:1766, y:170}, {x:1778, y:208}, {x:1770, y:180}, {x:1770, y:180}, {x:1773, y:148}, {x:1766, y:168}, {x:1778, y:150}, {x:1837, y:126}];
 
 
 module.exports = {
 	deLumbridgeAVarrock : deLumbridgeAVarrock,
 	deBancoAMina : deBancoAMina,
-	deMinaABanco : deMinaABanco
+	deMinaABanco : deMinaABanco,
+	deVarrockABarbados : deVarrockABarbados};
