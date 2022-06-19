@@ -12,7 +12,7 @@ let miBot = new Bot(robot);
 
 
 
-//miBot.viajar(rutas.deVarrockABarbados);
+miBot.viajar(rutas.deVarrockABarbaros);
 //miBot.viajar(rutas.deBarbadosAVarrock);
 //miBot.viajar(rutas.deBancoAMina);
 //miBot.viajar(rutas.deMinaABanco);
