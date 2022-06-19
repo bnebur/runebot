@@ -1,5 +1,5 @@
-const robot = require('robotjs');
-const bot = require('./utils/bot.js')
-const Bot = bot.Bot;
+const esPro = true;
+const dineroEnElBanco = 0;
 
-let miBot = new Bot(robot);
+let usuarioLoggeado = false;
+let escuelaPrimaria = "Miguel Riofrio";
