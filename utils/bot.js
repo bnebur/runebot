@@ -1,6 +1,9 @@
+const situacion = require('./situacion.js');
+
 class Bot {
 	constructor(robot) {
 		this.robot = robot;
+		this.situaciones = situacion;
 		this.size = this.robot.getScreenSize();
 		this.width = this.size.width;
 		this.heigth = this.size.height;
@@ -37,12 +40,6 @@ class Bot {
 		const coord = situacion.coord;
 		const img = this.robot.screen.capture(0, 0, this.width, this.height);
 		return (img.colorAt(coord.x, coord.y) === color);
-	}
-
-	checkearMenu() {
-		const menuAbierto = {color : '', coord : {x : 0, y : 0}} //IMPLEMENTAR
-		const estaAbierto = this.checkearSi(menuAbierto);
-		if (!estaAbierto); //Implementar metodo presionar tecla
 	}
 
 	dormir(s) {

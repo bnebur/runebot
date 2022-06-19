@@ -4,13 +4,13 @@ const deBancoAMina = [{x:1903 , y:138}, {x:1885 , y:217}, {x:1879 , y:220}, {x:1
 
 const deMinaABanco = [{x:1866 , y:102}, {x:1825 , y:96}, {x:1808 , y:100}, {x:1772 , y:135}, {x:1780 , y:196}, {x:1834 , y:169}];
 
-const deVarrockABarbados = [{x:1769, y:162}, {x:1766, y:170}, {x:1778, y:208}, {x:1770, y:180}, {x:1770, y:180}, {x:1773, y:148}, {x:1766, y:168}, {x:1778, y:150}, {x:1837, y:126}];	
+const deVarrockABarbaros = [{x:1769, y:162}, {x:1766, y:170}, {x:1778, y:208}, {x:1770, y:180}, {x:1770, y:180}, {x:1773, y:148}, {x:1766, y:168}, {x:1778, y:150}, {x:1837, y:126}];	
 
-const deBarbadosAVarrock = [{x:1888, y:219}, {x:1912, y:169}, {x:1911, y:171}, {x:1906, y:174}, {x:1905, y:157}, {x:1899, y:138}, {x:1910, y:164}, {x:1904, y:175}];
+const deBarbarosAVarrock = [{x:1888, y:219}, {x:1912, y:169}, {x:1911, y:171}, {x:1906, y:174}, {x:1905, y:157}, {x:1899, y:138}, {x:1910, y:164}, {x:1904, y:175}];
 
 module.exports = {
 	deLumbridgeAVarrock : deLumbridgeAVarrock,
 	deBancoAMina : deBancoAMina,
 	deMinaABanco : deMinaABanco,
-	deVarrockABarbados : deVarrockABarbados,
-	deBarbadosAVarrock : deBarbadosAVarrock};
+	deVarrockABarbaros : deVarrockABarbaros,
+	deBarbarosAVarrock : deBarbarosAVarrock};
