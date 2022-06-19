@@ -1,7 +1,8 @@
-const  nombreDeMiPerrita = "Martina";
+function numeroRandon(cualQuierNumero){
+	const numero = 100;
+	console.log("Hola mundo");
+	console.log(cualQuierNumero);
+};
 
-const esaCamisetaEsBlanca = false; 
+numeroRandon(100)
 
-
-let colores = "amarillo, rojo";
-let tallaDeZapatos = 32, 42; 
