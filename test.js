@@ -9,13 +9,14 @@ let miBot = new Bot(robot);
 
 
 
+
+
+
 //miBot.viajar(rutas.deVarrockABarbados);
-
-
-
+//miBot.viajar(rutas.deBarbadosAVarrock);
 //miBot.viajar(rutas.deBancoAMina);
 //miBot.viajar(rutas.deMinaABanco);
 
 
-//miBot.revisarMouse();
+miBot.revisarMouse();
 //miBot.viajar(rutas.deLumbridgeAVarrock);
