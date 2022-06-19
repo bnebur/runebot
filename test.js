@@ -1,22 +1,7 @@
-const robot = require('robotjs');
-const bot = require('./utils/bot.js');
-const rutas = require('./utils/rutas.js');
-const Bot = bot.Bot;
+const  nombreDeMiPerrita = "Martina";
 
-let miBot = new Bot(robot);
-//miBot.rectificar();
- 
+const esaCamisetaEsBlanca = false; 
 
 
-
-
-
-
-miBot.viajar(rutas.deVarrockABarbaros);
-//miBot.viajar(rutas.deBarbadosAVarrock);
-//miBot.viajar(rutas.deBancoAMina);
-//miBot.viajar(rutas.deMinaABanco);
-
-
-miBot.revisarMouse();
-//miBot.viajar(rutas.deLumbridgeAVarrock);
+let colores = "amarillo, rojo";
+let tallaDeZapatos = 32, 42; 
