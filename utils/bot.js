@@ -5,7 +5,7 @@ class Bot {
 		this.menu = require('./menu.js');
 		this.size = this.robot.getScreenSize();
 		this.width = this.size.width;
-		this.heigth = this.size.height;
+		this.height = this.size.height;
 	}
 
 // FUNCIONES DE MOVIMIENTO
@@ -45,6 +45,39 @@ class Bot {
 		console.log(`Color hexadecimal:	${color}`);
 	}
 
+// 
+
+	buscar(objeto, intentosMaximos=6) {
+		const img = this.robot.screen.capture(0, 0, this.width, this.height);
+		let muestra;
+		for (let i = 0; i < intentosMaximos; i++) {
+			for (let p = 0; p < 1000; p++) {
+				
+				let randX = this.random(0, this.width - 1);
+				let randY = this.random(0, this.height - 1);
+
+				muestra = img.colorAt(randX, randY);
+
+				if (objeto.color.includes(muestra)) {
+					return {x : randX, y : randY};
+				}
+			}
+		}
+	}
+
+	abrirMenuBanco(objetoBanquero) {
+		let coord = this.buscar(objetoBanquero);
+		if (coord) {
+			this.robot.moveMouse(coord.x, coord.y);
+			this.robot.mouseClick("right");
+			this.dormir(1);
+			this.robot.moveMouse(coord.x, coord.y + 40);
+			this.robot.mouseClick();
+		} else {
+			console.log("No hay banquero!");
+		}
+	}
+
 // FUNCIONES DE MANEJO DE MENU
 
 	rectificar() {
@@ -65,6 +98,10 @@ class Bot {
 	dormir(s) {
 		let ms = s * 1000;
 		Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, ms);
+	}
+
+	random(min, max) {
+		return Math.floor(Math.random() * (max - min + 1)) + min;
 	}
 }
 
