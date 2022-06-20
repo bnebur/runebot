@@ -1,6 +1,7 @@
 class Bot {
 	constructor(robot) {
 		this.robot = robot;
+		this.status = "";
 		this.situacion = require('./situacion.js').situacion;
 		this.menu = require('./menu.js');
 		this.size = this.robot.getScreenSize();
@@ -69,13 +70,24 @@ class Bot {
 		let coord = this.buscar(objetoBanquero);
 		if (coord) {
 			this.robot.moveMouse(coord.x, coord.y);
+			this.dormir(1);
 			this.robot.mouseClick("right");
 			this.dormir(1);
 			this.robot.moveMouse(coord.x, coord.y + 40);
 			this.robot.mouseClick();
+			this.dormir(4);
 		} else {
 			console.log("No hay banquero!");
 		}
+	}
+
+	vaciarInventario() {
+		let coord = { x : 1880, y : 982 }
+		this.robot.moveMouse(coord.x, coord.y);
+		this.robot.mouseClick("right");
+		this.dormir(1);
+		this.robot.moveMouse(coord.x, coord.y + 20);
+		this.robot.mouseClick();
 	}
 
 // FUNCIONES DE MANEJO DE MENU

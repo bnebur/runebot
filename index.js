@@ -10,6 +10,7 @@ if (bot.si(bot.situacion.inventarioNoFull)) {
 	bot.viajar(ruta.deBancoAMina);
 } else {
 	bot.viajar(ruta.deMinaABanco);
+	let menuVacio = bot.si(bot.situacion.inventarioNoFull); 
 	bot.abrirMenuBanco(objetos.banquero);
+	bot.vaciarInventario();
 }
-
