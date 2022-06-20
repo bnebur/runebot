@@ -66,6 +66,18 @@ class Bot {
 		}
 	}
 
+	minar(objeto, tiempoDeDormir) {
+		const mena = this.buscar(objeto);
+		if (mena) {
+			this.robot.moveMouseSmooth(mena.x, mena.y);
+			this.robot.mouseClick();
+			this.dormir(tiempoDeDormir);
+		} else {
+			console.log('No veo menas!');
+		}
+
+	}
+
 	abrirMenuBanco(objetoBanquero) {
 		let coord = this.buscar(objetoBanquero);
 		if (coord) {
