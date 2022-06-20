@@ -15,7 +15,10 @@ if (bot.si(bot.situacion.inventarioNoFull)) {
 	bot.minar(objetos.hierro, 4);
 } else {
 	bot.viajar(ruta.deMinaABanco);
-	let menuVacio = bot.si(bot.situacion.inventarioNoFull); 
-	bot.abrirMenuBanco(objetos.banquero);
-	bot.vaciarInventario();
+	let banquero = bot.buscar(objetos.banquero);
+	if (banquero) {
+		bot.abrirMenuBanco(objetos.banquero);
+		bot.vaciarInventario();
+	}
 }
+
