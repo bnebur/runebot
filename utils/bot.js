@@ -48,7 +48,7 @@ class Bot {
 
 // 
 
-	buscar(objeto, intentosMaximos=6) {
+	buscar(objeto, intentosMaximos=8) {
 		const img = this.robot.screen.capture(0, 0, this.width, this.height);
 		let muestra;
 		for (let i = 0; i < intentosMaximos; i++) {
