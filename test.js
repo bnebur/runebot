@@ -1,8 +1,32 @@
-function numeroRandon(cualQuierNumero){
-	const numero = 100;
-	console.log("Hola mundo");
-	console.log(cualQuierNumero);
-};
+const robot = require('robotjs');
+const {Bot} = require('./utils/bot.js');
+const {ruta} = require('./utils/rutas.js');
+const objetos = require('./utils/objetos.js');
 
-numeroRandon(100)
+const bot = new Bot(robot);
+
+// while (1===1) {
+
+	
+
+// 	if (bot.si(bot.situacion.inventarioNoFull)) {
+// 		// bot.viajar(ruta.deBancoAMina);
+// 		let hayEspacio = bot.si(bot.situacion.inventarioNoFull);
+// 		while (hayEspacio) {
+// 			bot.minar(objetos.cobre, 11);
+// 			hayEspacio = bot.si(bot.situacion.inventarioNoFull);
+// 		}
+// 		bot.minar(objetos.hierro, 4);
+// 	} else {
+// 		bot.viajar(ruta.deMinaABanco);
+// 		let menuVacio = bot.si(bot.situacion.inventarioNoFull); 
+// 		bot.abrirMenuBanco(objetos.banquero);
+// 		bot.vaciarInventario();
+// 	}
+// }
+
+bot.checkearColor();
+//let x = bot.buscar(cobre)
+
+//nsole.log(x);
 
