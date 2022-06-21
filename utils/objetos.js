@@ -4,7 +4,7 @@ const banquero = {
 	
 
 const hierro = {
-	color : ['452319', '2f190f', '3d1f16', '22110c', '321a11'],
+	color : ['452319', '2f190f', '3d1f16', '22110c']
 }
 
 

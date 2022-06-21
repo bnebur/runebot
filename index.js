@@ -13,7 +13,7 @@ while (1 === 1) {
 		bot.viajar(ruta.deBancoAMina);
 		let hayEspacio = bot.si(bot.situacion.inventarioNoFull);
 		while (hayEspacio) {
-			bot.minar(objetos.hierro, 6);
+			bot.minar(objetos.hierro, 5);
 			hayEspacio = bot.si(bot.situacion.inventarioNoFull);
 		}
 		bot.minar(objetos.hierro, 4);
@@ -23,12 +23,11 @@ while (1 === 1) {
 		if (banquero) {
 			bot.abrirMenuBanco(objetos.banquero);
 			bot.vaciarInventario();
+			bot.dormir(4);
 		}
 	}
 
 }
-
-
 
 
 
