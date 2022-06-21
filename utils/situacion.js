@@ -8,7 +8,7 @@ const situacion = {
 		}
 	},
 
-	inventarioNoFull : {
+	inventarioVacio : {
 		color : '3e3529',
 		coord : {
 			x : 1880,

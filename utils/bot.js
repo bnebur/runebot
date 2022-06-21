@@ -3,10 +3,25 @@ class Bot {
 		this.robot = robot;
 		this.status = "";
 		this.situacion = require('./situacion.js').situacion;
-		this.menu = require('./menu.js');
+		this.acciones = require('./acciones.js');
 		this.size = this.robot.getScreenSize();
 		this.width = this.size.width;
 		this.height = this.size.height;
+	}
+
+	menu(accion) {
+		this.robot.moveMouse(accion.coord.x, accion.coord.y);
+		this.robot.mouseClick();
+	}
+
+	menuActivar(accion) {
+		let inactivo = this.checkear(accion.inactivo);
+		if (inactivo) this.menu(accion);
+	}
+
+	menuDesactivar(accion) {
+		let activo = this.checkear(accion.activo);
+		if (activo) this.menu(accion);
 	}
 
 // FUNCIONES DE MOVIMIENTO
@@ -47,7 +62,6 @@ class Bot {
 	}
 
 // 
-
 	buscar(objeto, intentosMaximos=10) {
 		const img = this.robot.screen.capture(0, 0, this.width, this.height);
 		let muestra;
@@ -67,12 +81,12 @@ class Bot {
 		}
 	}
 
-	minar(objeto, tiempoDeDormir) {
+	minar(objeto) {
 		const mena = this.buscar(objeto);
 		if (mena) {
 			this.robot.moveMouseSmooth(mena.x, mena.y);
 			this.robot.mouseClick();
-			this.dormir(tiempoDeDormir);
+			this.dormir(objeto.tiempo);
 		} else {
 			console.log('No veo menas!');
 		}
@@ -110,12 +124,27 @@ class Bot {
 		this.robot.moveMouseSmooth(coord.x, coord.y);
 		this.robot.mouseClick();
 	}
-
+// DEPRECAR
 	si(situacion) {
 		const color = situacion.color;
 		const coord = situacion.coord;
 		const img = this.robot.screen.capture(0, 0, this.width, this.height);
 		return (img.colorAt(coord.x, coord.y) === color);
+	}
+//
+	checkear(situacion) {
+		const img = this.robot.screen.capture(0, 0, this.width, this.height);
+		return (img.colorAt(situacion.coord.x, situacion.coord.y) === situacion.color);
+	}
+
+	confirmar(situacion) {
+		const confirmacion = situacion.confirmacion;
+		let existe = this.checkear(situacion);
+		if (existe) {
+			this.robot.moveMouse(situacion.coord.x, situacion.coord.y);
+			let img = this.robot.screen.capture(0, 0, this.width, this.height);
+			return (img.colorAt(confirmacion.coord.x, confirmacion.coord.y) === confirmacion.color);
+		}
 	}
 
 // OTRAS FUNCIONES
@@ -128,6 +157,32 @@ class Bot {
 	random(min, max) {
 		return Math.floor(Math.random() * (max - min + 1)) + min;
 	}
+// RUTINAS
+	rutinaDeMinado(metal, deBancoAMina, deMinaABanco, banquero) {
+		while (true) {
+			let inventarioVacio = this.checkear(this.situacion.inventarioVacio);
+			if (inventarioVacio) {
+				this.menuDesactivar(this.acciones.correr);
+				this.viajar(deBancoAMina);
+				let hayEspacio = this.checkear(this.situacion.inventarioVacio);
+				while (hayEspacio) {
+					this.menuActivar(this.acciones.correr);
+					this.minar(metal);
+					hayEspacio = this.checkear(this.situacion.inventarioVacio);
+				}
+			} else {
+				this.menuDesactivar(this.acciones.correr);
+				this.viajar(deMinaABanco);
+				let existeBanquero = this.buscar(banquero);
+				if (existeBanquero) {
+					this.abrirMenuBanco(banquero);
+					this.vaciarInventario();
+					this.dormir(4);
+				}
+			}
+		}
+	}
+
 }
 
 module.exports = {
