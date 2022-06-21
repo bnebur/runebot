@@ -60,6 +60,7 @@ class Bot {
 				muestra = img.colorAt(randX, randY);
 
 				if (objeto.color.includes(muestra)) {
+					console.log(`Encontrado ${muestra}`);
 					return {x : randX, y : randY};
 				}
 			}
