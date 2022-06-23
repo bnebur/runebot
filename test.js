@@ -5,28 +5,26 @@ const objetos = require('./utils/objetos.js');
 
 const bot = new Bot(robot);
 
-// while (1===1) {
 
-	
+//bot.minar(carbon);
 
-// 	if (bot.si(bot.situacion.inventarioNoFull)) {
-// 		// bot.viajar(ruta.deBancoAMina);
-// 		let hayEspacio = bot.si(bot.situacion.inventarioNoFull);
-// 		while (hayEspacio) {
-// 			bot.minar(objetos.cobre, 11);
-// 			hayEspacio = bot.si(bot.situacion.inventarioNoFull);
-// 		}
-// 		bot.minar(objetos.hierro, 4);
-// 	} else {
-// 		bot.viajar(ruta.deMinaABanco);
-// 		let menuVacio = bot.si(bot.situacion.inventarioNoFull); 
-// 		bot.abrirMenuBanco(objetos.banquero);
-// 		bot.vaciarInventario();
-// 	}
-// }
 
-bot.checkearColor();
+
+// bot.rutinaDeMinado(objetos.hierro, ruta.deBancoAMina, ruta.deMinaABanco, objetos.banquero);
+
+// bot.menuDesactivar(bot.acciones.correr);
+
+
+bot.minar(oro)
+
+// bot.checkearColor();
 //let x = bot.buscar(cobre)
 
 //nsole.log(x);
 
+
+// const coord1 = {x: 1867, y: 103}
+
+// bot.caminar(coord1)
+
+// bot.revisarMouse();

@@ -15,8 +15,23 @@ const cobre = {
 	tiempo : 14
 }
 
+
+const oro ={
+	color : ['79681e', '544814', '937f25', '544814', '79681e', 'ae962c','7c6b1f'],
+	tiempo : 6
+} 
+
+const carbon = {
+	color : ['252516', '1e1e11', '17170c', '13130a', '0a0a05'],
+	tiempo : 8
+}
+
+
 module.exports = {
 	banquero : banquero,
 	hierro : hierro,
-	cobre : cobre
+	cobre : cobre,
+	oro : oro,
+	carbon : carbon,
 }
+
