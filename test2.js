@@ -5,8 +5,9 @@ const objetos = require('./utils/objetos.js');
 
 const bot = new Bot(robot);
 
-bot.rectificar();
-bot.viajar(ruta.deBancoaMinaAlKharid);
+//bot.rectificar();
+//bot.viajar(ruta.deBancoaMinaAlKharid);
+bot.revisarMouse();
 
 
 
