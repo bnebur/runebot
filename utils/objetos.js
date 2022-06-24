@@ -2,6 +2,11 @@ const banquero = {
 	color: ['211a2e', '181321', '0e0918', '0f0a19', '160e21', '191125', '1b1625', '251d32', '221b2f', '211a2b', '302641', '1e1729'],
 	tiempo: 4
 }
+
+const banqueroAlKharid = {
+	color: ['5a5251', '5e5655', '585050', '534b4b', '605757'],
+	tiempo: 4
+}
 	
 
 const hierro = {
