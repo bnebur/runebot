@@ -39,18 +39,18 @@ mover(coordenadas);
 // 3. Implementar un bucle for, dentro del bucle llamar la funcion mover en cada coordenada de la lista coordenadas.
 // IMPLEMENTAR AQUI
 
-for (let mover; coordenadas.lenght; i--){
-	console.log(coordenadas)
-}
 
+for (let mover=0;mover < coordenadas.x.length;mover++){
+	console.log('mover en x: '+ coordenadas.x[mover])
+	console.log('mover en y: '+ coordenadas.y[mover])
+}
 
 
 
 
 // 4. Implementar un bucle while, donde la condicion siempre sea verdadera, dentro del bucle llamar la funcion mover en la primera y ultima coordenadas de la lista coordenadas.color
 
-let i = 0;
-while (mover[i]){
-	console.log(i);
-	i += 1;
+while (true){
+	mover(coordenadas.x[0],coordenadas.y[0])
+	mover(coordenadas.x[3],coordenadas.y[3])
 }
