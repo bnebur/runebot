@@ -1,7 +1,6 @@
 class Bot {
 	constructor(robot) {
 		this.robot = robot;
-		this.status = "";
 		this.situacion = require('./situacion.js').situacion;
 		this.acciones = require('./acciones.js');
 		this.size = this.robot.getScreenSize();
