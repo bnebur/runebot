@@ -6,3 +6,5 @@ const objetos = require('./utils/objetos.js');
 const bot = new Bot(robot);
 
 bot.rutinaDeMinado(objetos.hierro, ruta.deBancoAMina, ruta.deMinaABanco, objetos.banquero);
+
+console.log("Pls");
