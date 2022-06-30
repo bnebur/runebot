@@ -69,8 +69,10 @@ Dentro de esta funcion debemos desabilitar la barrera magica del objetivo usando
 
 A continuacion llamamos la funcion anonima, sobre el objetivo.
 */
-
-
+function penetrarBarreraMagica(objetivo, funcionAnonima) {
+	objetivo.penetrar(objetivo);
+	funcionAnonima(objetivo);
+}
 
 /*
 
