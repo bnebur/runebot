@@ -8,3 +8,5 @@ const bot = new Bot(robot);
 bot.rutinaDeMinado(objetos.hierro, ruta.deBancoAMina, ruta.deMinaABanco, objetos.banquero);
 
 console.log("Pls");
+console.log("Pls mmvg");
+console.log("completar el examen");
