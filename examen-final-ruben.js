@@ -11,13 +11,18 @@ const primerCandado = new Candado();
 	Para probar las claves podemos usar el metodo .intentarAbrir, para checkear si esta abierto podemos usar la propiedad .estado.
 	Al final encontremos la clave del candado.
 */
-
 function hechizarCandado(unCandado) {
-
 // IMPLEMENTAR CODIGO AQUI
+let intento1 = 0;
+let clave = 0;
+
+	while(unCandado.estado === "Cerrado"){
+		unCandado.intentarAbrir(intento1);
+		intento1++;
+
+	}
 
 }
-
 hechizarCandado(primerCandado);
 /*
 	Al cruzar de la primera puerta encontramos con un esqueleto animado, aun no se da cuenta que estas ahi.
@@ -32,19 +37,21 @@ const guardiaCalavera = new Enemigo('Guardia Calavera', elementos[1]);
 	      b) dentro del metodo lanzar, usamos objetivo.recibir(this.elemento);
 	Por ultumo creamos una instancia de Hechizo, con elemento fuego. Luego lo lanzamos sobre el guardia calavera.
 */
-
-
 class Hechizo {
-
-	// IMPLEMENTAR CODIGO AQUI
+	constructor(elemento){
+		this.elemento = elemento;
+	}
+	lanzar(objetivo){
+		objetivo.recibir(this.elemento);
+	}
 
 }
 
-
 // INSTANCIAR Y LANZAR EL HECHIZO AQUI
-
-
-
+const tormentaDeHielo = new Hechizo("agua");
+const BoladeFuego = new Hechizo("fuego");
+tormentaDeHielo.lanzar(guardiaCalavera)
+BoladeFuego.lanzar(guardiaCalavera);
 
 /*
 	Avanzamos por el calabozo, y nos topamos en el duelo final con el jefe. Preparemonos para la batalla.
@@ -57,7 +64,8 @@ const oscaritoElDuro = new Enemigo('Oscarito el Lich Duro', elementos[6], 'Vasij
 
 
 // INSTANCIAR EL HECHIZO DEL CAOS AQUI Y LANZARLO AVER QUE PASA
-
+const agonia = new Hechizo("caos");
+agonia.lanzar(oscaritoElDuro);
 
 /*
 Parece que oscarito el duro tiene algun tipo de inmunidad, para destruirlo debemos primero quitarle su invulnerabilidad. Para esto debemos aprender a sobrecargar nuestros hechizos.
@@ -69,6 +77,12 @@ Dentro de esta funcion debemos desabilitar la barrera magica del objetivo usando
 
 A continuacion llamamos la funcion anonima, sobre el objetivo.
 */
+function penetrarBarreraMagica(objetivo){
+	objetivo.penetrar()
+
+}
+penetrarBarreraMagica(oscaritoElDuro);
+
 
 
 
@@ -77,8 +91,11 @@ A continuacion llamamos la funcion anonima, sobre el objetivo.
 Usemos nuestro hechizo sobrecargado penetrarBarreraMagica sobre oscaritoElDuro, y usando una funcion anonima lanzemos el hechizo que preparamos.
 
 */
+function penetrarBarreraMagica(objetivo, funcionAnonima) {
+	objetivo.penetrar(objetivo);
+	funcionAnonima = agonia.lanzar(objetivo)
 
-
+}
 
 
 //Si oscarito esta muerto, has ganado.
