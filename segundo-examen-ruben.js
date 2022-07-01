@@ -7,22 +7,56 @@
 //		d) Tiene una funcion llamada multiplicar, esta recibe un argumento. Dentro de la funcion multiplica el valor por atributo x y lo asigna al atributo x. Al final llama mostrar.
 //		e) Tiene una funcion llamada potenciar, esta recibe un argumento. Dentro de la funcion eleva el atributo x al valor y lo asigna al atributo x. Al final llama mostrar.
 // IMPLEMENTAR AQUI
+class Calculadora{
+	constructor(x=0){
+		this.argumento = x;
+	}
+	mostrar(){
+		console.log(this.argumento);
+	}	
+	sumar(unnumero){
+		let lasuma = this.argumento + unnumero;
+		this.argumento = lasuma;
+		this.mostrar();
+	}
+	multiplicar(){
+		let lamultiplicacion = 0;
+		lamultiplicacion = 10*this.argumento;
+		return lamultiplicacion;
+	}
+	potenciar(n){
+		let calculo = this.argumento ** n;
+		this.argumento = calculo;
+		this.mostrar();
+	}
 
+}
+let numeroEspecifico = new Calculadora(3);
+numeroEspecifico.mostrar();
+numeroEspecifico.sumar(20);
+numeroEspecifico.potenciar(3);
 
 // 2. Crear dos instancias de Calculadora, una llamada tiempo con el valor 2 y otra con el nombre potencia y valor 10.
 // IMPLEMENTAR AQUI
-
+let tiempo = new Calculadora(2);
+let potencia = new Calculadora(10);
 
 // 3. Realizar las siguientes operaciones:
 //		a) Usando los metodos que definimos llevar al cuadrado a ambas instancias.
 //		b) Sumar 23 a ambas instancias.
 // IMPLEMENTAR AQUI
-
+tiempo.potenciar(2);
 
 // 4. Crear un array llamado numeros, que contiene 4 instancias de la clase Calculadora, con los valores 1, 2, 3, 4.
 // IMPLEMENTAR AQUI
+
+let numeros = [new Calculadora(1),new Calculadora(2), new Calculadora(3), new Calculadora(4)];
+
 
 
 // 5. Usando un bucle for, incrementar el valor de cada instancia del array numeros en 1.
 // IMPLEMENTAR AQUI
 
+for(let calc of numeros){
+	calc.sumar(1);
+}

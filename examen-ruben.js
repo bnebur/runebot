@@ -13,24 +13,28 @@ const coordenadas = {
 // 1. Implementar una funcion llamada largo, que toma como argumento una lista y devuelve el largo de la lista.
 // IMPLEMENTAR AQUI
 
-function largo(lista) {
-
-	return lista.length;
+function largo(objeto) {
+	let largox = objeto.x.length;
+	let largoy = objeto.y.length;
+	return {x: largox,y: largoy};
 }
 largo(coordenadas)
 
 // Testeo no debe dar error
 
-console.log(`El objeto tiene x: ${largo(coordenadas.x)} y : ${largo(coordenadas.y)}`);
+console.log(`El objeto tiene x: ${largo(coordenadas).y}`);
 
 // 2. Implementar una funcion llamada mover que toma como argumento una coordenada, y luego usa el paquete robotjs para mover el raton de manera humana a la coordenada.
 // IMPLEMENTAR AQUI
 
-function mover(x,y){
-	robot.moveMouseSmooth(x,y);
-	return x,y
+function mover(coord){
+	robot.moveMouseSmooth(coord.x,coord.y);
 }
-mover(coordenadas);
+const unocoord = {
+	x : coordenadas.x[0],
+	y : coordenadas.y[0]
+}
+mover(unocoord);
 
 
 
@@ -40,9 +44,14 @@ mover(coordenadas);
 // IMPLEMENTAR AQUI
 
 
-for (let mover=0;mover < coordenadas.x.length;mover++){
-	console.log('mover en x: '+ coordenadas.x[mover])
-	console.log('mover en y: '+ coordenadas.y[mover])
+for (let i=0;i < coordenadas.x.length;i++){
+	let coordactual = {
+		x : coordenadas.x[i],
+		y : coordenadas.y[i]
+	}
+	mover(coordactual);
+	console.log('mover en x: '+ coordenadas.x[i])
+	console.log('mover en y: '+ coordenadas.y[i])
 }
 
 
