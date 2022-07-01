@@ -13,12 +13,15 @@ const primerCandado = new Candado();
 */
 
 function hechizarCandado(unCandado) {
-
-// IMPLEMENTAR CODIGO AQUI
-
+	let combinacion = 0;
+	while (unCandado.estado === "Cerrado") {
+		unCandado.intentarAbrir(combinacion);
+		combinacion++;
+	}
 }
 
 hechizarCandado(primerCandado);
+
 /*
 	Al cruzar de la primera puerta encontramos con un esqueleto animado, aun no se da cuenta que estas ahi.
 	El esqueleto animado solo es vulnerable a los hechizos de fuego, de los cuales no sabes niuno.
