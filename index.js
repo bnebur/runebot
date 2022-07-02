@@ -1,12 +1,16 @@
-const robot = require('robotjs');
-const {Bot} = require('./utils/bot.js');
-const {ruta} = require('./utils/rutas.js');
-const objetos = require('./utils/objetos.js');
 
-const bot = new Bot(robot);
 
-bot.rutinaDeMinado(objetos.hierro, ruta.deBancoAMina, ruta.deMinaABanco, objetos.banquero);
+let combinacion = 1234; // ????????????????????
 
-console.log("Pls");
-console.log("Pls mmvg");
-console.log("completar el examen");
+
+function averiguar(combinacion) {
+	for (let intento=0; intento < 10000; intento++) {
+		let coinciden = combinacion === intento;
+		console.log(coinciden);
+		if (coinciden===true) {
+			return coinciden;
+		}
+	}
+}
+
+averiguar(combinacion);

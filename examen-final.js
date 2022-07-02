@@ -13,10 +13,11 @@ const primerCandado = new Candado();
 */
 
 function hechizarCandado(unCandado) {
-	let combinacion = 0;
-	while (unCandado.estado === "Cerrado") {
-		unCandado.intentarAbrir(combinacion);
-		combinacion++;
+	for (let i=0; i < 10000; i++) {
+		unCandado.intentarAbrir(i);
+		if (unCandado.estado === "Abierto") {
+			break;
+		}
 	}
 }
 
